@@ -1,12 +1,3 @@
-// ==UserScript==
-// @name       Shanbay Plus
-// @namespace  http://stormluke.me/
-// @version    0.1
-// @description  some enhancement on shanbay.com
-// @match      http*://www.shanbay.com/*
-// @require    http://code.jquery.com/jquery-1.9.1.min.js
-// ==/UserScript==
-
 function change(html, rootsDiv) {
   if(html) {
     rootsDiv.html(html);
@@ -16,14 +7,9 @@ function change(html, rootsDiv) {
 }
 
 function fetch(word, rootsDiv) {
-  GM_xmlhttpRequest({
-    method: 'GET',
-    url: 'http://www.iciba.com/' + word,
-    onload: function(response) {
-      var html = $('#dict_content_6',response.responseText).html();
-      console.log(html);
-      change(html, rootsDiv);
-    }
+  $.get('http://www.iciba.com/' + word, function(data) {
+    var html = $('#dict_content_6', data).html();
+    change(html, rootsDiv);
   });
 }
 
