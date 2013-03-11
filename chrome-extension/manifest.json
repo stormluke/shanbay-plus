@@ -2,11 +2,14 @@
   "manifest_version": 2,
   "name": "Shanbay Plus",
   "description": "some enhancement on shanbay.com",
-  "version": "0.1",
+  "icons": {
+      "48": "icon.png"
+    },
+  "version": "0.2",
   "content_scripts": [
     {
       "matches": ["http://www.shanbay.com/*"],
-      "js": ["jquery-1.9.1.min.js", "roots.js"]
+      "js": ["jquery-1.9.1.min.js", "core.js"]
     }
   ],
   "permissions": [
