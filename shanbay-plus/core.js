@@ -36,7 +36,7 @@ function changeRoot(trimWord, rootList) {
 }
 
 function changeWord(trimWord, empWord) {
-  if(getTrimWord(getOriWord()) != trimWord) return;
+  if(getTrimWord(getOriWord()) != trimWord || getTrimWord(empWord) != trimWord) return;
   $('h1.content').html(empWord + '<small>' + $('h1.content small').html() + '</small>'); 
 }
 
